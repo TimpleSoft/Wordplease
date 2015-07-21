@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ post.title }} {% endblock %}
+
+{% block section %}
+    <h1>{{ post.title }}</h1>
+
+    <p>{{ post.abstract }}</p>
+    <img src="{{ post.imageUrl }}" alt="{{ post.title }}" width="600">
+    <p>{{ post.body }}</p>
+    <p>
+        <strong>Categorías:</strong>
+        <ul>
+            {% for category in post.categories.all %}
+            <li>{{ category.name }}</li>
+            {% endfor %}
+        </ul>
+    </p>
+    <p>
+        <strong>Autor:</strong>
+        {{ post.owner.first_name }}
+        {{ post.owner.last_name }}
+    </p>
+{% endblock %}

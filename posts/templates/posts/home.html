@@ -7,7 +7,7 @@
 
     {% if posts_list|length > 0 %}
         <h2>Últimos posts publicados</h2>
-        <table>
+        <table class="table">
             {% include 'posts/posts_loop.html' %}
         </table>
     {% else %}
