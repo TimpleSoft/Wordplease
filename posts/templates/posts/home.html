@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block section %}
+
+    <h1>Bienvenido a Wordplease</h1>
+    <p>Por favor, escribe cosas para que tenga SEO</p>
+
+    {% if posts_list|length > 0 %}
+        <h2>Últimos posts publicados</h2>
+        <table>
+            {% include 'posts/posts_loop.html' %}
+        </table>
+    {% else %}
+        ¡Sé el primero en publicar un posts!
+    {% endif %}
+
+{% endblock %}

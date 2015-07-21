@@ -1,0 +1,21 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} Bienvenido a Wordplease - Por favor, escribe cosas para que tenga SEO {% endblock %}</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap-theme.min.css' %}" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <a href="{% url 'posts_home' %}">Home</a>
+    </nav>
+    <hr>
+    <section>
+        {% block section %} {% endblock %}
+    </section>
+    <hr>
+    <small>Wordplease Inc &copy; Todos los derechos reservados</small>
+</body>
+</html>
