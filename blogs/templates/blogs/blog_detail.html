@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %} El blog de {{ user.first_name }} {{ user.last_name }}  {% endblock %}
+
+{% block section %}
+    <h1>El blog de {{ user.first_name }} {{ user.last_name }}</h1>
+
+    {% if posts_list|length > 0 %}
+        <h2>Últimos posts publicados</h2>
+        <table class="table">
+            {% include 'blogs/posts_loop.html' %}
+        </table>
+    {% else %}
+        Este blog no tiene ningún post.
+    {% endif %}
+
+{% endblock %}
