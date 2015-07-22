@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Django settings for Wordplease project.
 
@@ -123,3 +124,7 @@ LOGGING = {
         },
     }
 }
+
+
+# LOGIN URL
+LOGIN_URL = '/login'  # cuando un usuario no esté autenticado, le redirige a /login

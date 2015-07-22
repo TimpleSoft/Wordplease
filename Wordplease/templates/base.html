@@ -3,14 +3,22 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %} Bienvenido a Wordplease - Por favor, escribe cosas para que tenga SEO {% endblock %}</title>
+    <title>{% block title %} Bienvenido a Wordplease - Por favor... escribe posts para que tenga SEO {% endblock %}</title>
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static 'css/bootstrap-theme.min.css' %}" rel="stylesheet">
 </head>
 <body>
     <nav>
-        <a href="{% url 'posts_home' %}">Home</a> |
-        <a href="{% url 'blogs_list' %}">Blogs</a>
+        <a href="{% url 'blogs_home' %}">Home</a> |
+        <a href="{% url 'blogs_list' %}">Blogs</a> |
+        {% if user.is_authenticated %}
+            <a href="{% url 'create_post' %}">Crear post</a>
+            |
+            <a href="{% url 'users_logout' %}">Salir</a>
+        {% else %}
+            <a href="{% url 'users_login' %}">Entrar</a> |
+            <a href="{% url 'users_signup' %}">Registrarse</a>
+        {% endif %}
     </nav>
     <hr>
     <section>
