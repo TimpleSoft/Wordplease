@@ -6,6 +6,7 @@
     <h1>{{ post.title }}</h1>
 
     <p>{{ post.abstract }}</p>
+    <p>Fecha de publicación: {{ post.publication_date | date:"d/m/Y"  }}</p>
     <img src="{{ post.imageUrl }}" alt="{{ post.title }}" width="600">
     <p>{{ post.body }}</p>
     <p>

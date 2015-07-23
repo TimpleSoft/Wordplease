@@ -56,7 +56,7 @@ class BlogDetailView(View):
             # obtenemos sus posts y los añadimos al contexto
             user_posts = Post.objects.filter(owner=user).order_by('-publication_date')
             context = {
-                'user': user,
+                'blog_user': user,
                 'posts_list': user_posts[:MAX_POSTS_BLOG_DETAIL]
             }
             return render(request, 'blogs/blog_detail.html', context)

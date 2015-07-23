@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 
-{% block title %} El blog de {{ user.first_name }} {{ user.last_name }}  {% endblock %}
+{% block title %} El blog de {{ blog_user.first_name }} {{ blog_user.last_name }}  {% endblock %}
 
 {% block section %}
-    <h1>El blog de {{ user.first_name }} {{ user.last_name }}</h1>
+    <h1>El blog de {{ blog_user.first_name }} {{ blog_user.last_name }}</h1>
 
     {% if posts_list|length > 0 %}
         <h2>Últimos posts publicados</h2>
